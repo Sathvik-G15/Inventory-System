@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(210 25% 3%);
+  --card: hsl(210 20% 96%);
+  --card-foreground: hsl(210 25% 5%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 25% 5%);
+  --primary: hsl(217.2 91.2% 59.8%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(159.4 78.8% 39.8%);
+  --secondary-foreground: hsl(210 25% 5%);
+  --muted: hsl(210 20% 88%);
+  --muted-foreground: hsl(210 25% 25%);
+  --accent: hsl(210 20% 84%);
+  --accent-foreground: hsl(210 25% 5%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 20% 85%);
+  --input: hsl(210 20% 90%);
+  --ring: hsl(217.2 91.2% 59.8%);
+  --chart-1: hsl(217.2 91.2% 59.8%);
+  --chart-2: hsl(159.4 78.8% 39.8%);
+  --chart-3: hsl(30.6 93.2% 65.9%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar-background: hsl(210 30% 96%);
+  --sidebar-foreground: hsl(210 25% 5%);
+  --sidebar-primary: hsl(217.2 91.2% 59.8%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(210 20% 90%);
+  --sidebar-accent-foreground: hsl(210 25% 5%);
+  --sidebar-border: hsl(210 20% 80%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.75rem;
+  --shadow-2xs: 0px 1px 2px 0px hsl(217.2 91.2% 59.8% / 0.05);
+  --shadow-xs: 0px 1px 2px 0px hsl(217.2 91.2% 59.8% / 0.05);
+  --shadow-sm: 0px 1px 3px 0px hsl(217.2 91.2% 59.8% / 0.1), 0px 1px 2px -1px hsl(217.2 91.2% 59.8% / 0.1);
+  --shadow: 0px 1px 3px 0px hsl(217.2 91.2% 59.8% / 0.1), 0px 1px 2px -1px hsl(217.2 91.2% 59.8% / 0.1);
+  --shadow-md: 0px 4px 6px -1px hsl(217.2 91.2% 59.8% / 0.1), 0px 2px 4px -2px hsl(217.2 91.2% 59.8% / 0.1);
+  --shadow-lg: 0px 10px 15px -3px hsl(217.2 91.2% 59.8% / 0.1), 0px 4px 6px -4px hsl(217.2 91.2% 59.8% / 0.1);
+  --shadow-xl: 0px 20px 25px -5px hsl(217.2 91.2% 59.8% / 0.1), 0px 8px 10px -6px hsl(217.2 91.2% 59.8% / 0.1);
+  --shadow-2xl: 0px 25px 50px -12px hsl(217.2 91.2% 59.8% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  
+  /* InvenAI specific colors */
+  --invenai-primary: hsl(217.2 91.2% 59.8%); /* #1E40AF */
+  --invenai-secondary: hsl(159.4 78.8% 39.8%); /* #059669 */
+  --invenai-warning: hsl(30.6 93.2% 65.9%); /* #D97706 */
+  --invenai-danger: hsl(0 84.2% 60.2%); /* #DC2626 */
+  --invenai-success: hsl(159.4 78.8% 39.8%); /* #059669 */
+  --invenai-info: hsl(217.2 91.2% 59.8%); /* #1E40AF */
+  
+  /* Background gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(217.2 91.2% 59.8%) 0%, hsl(221.2 83.2% 53.3%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(159.4 78.8% 39.8%) 0%, hsl(160 84.1% 39.4%) 100%);
+}
+
+.dark {
+  --background: hsl(240 10% 6%);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(240 10% 8%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(240 10% 6%);
+  --popover-foreground: hsl(0 0% 98%);
+  --primary: hsl(217.2 91.2% 65%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(240 5% 18%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(240 4% 14%);
+  --muted-foreground: hsl(240 3% 75%);
+  --accent: hsl(240 5% 16%);
+  --accent-foreground: hsl(0 0% 95%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(240 4% 24%);
+  --input: hsl(240 4% 18%);
+  --ring: hsl(217.2 91.2% 65%);
+  --chart-1: hsl(217.2 91.2% 65%);
+  --chart-2: hsl(159.4 78.8% 45%);
+  --chart-3: hsl(30.6 93.2% 70%);
+  --chart-4: hsl(147.14 78.5% 48%);
+  --chart-5: hsl(341.49 75.2% 56%);
+  --sidebar-background: hsl(240 10% 10%);
+  --sidebar-foreground: hsl(0 0% 98%);
+  --sidebar-primary: hsl(217.2 91.2% 65%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 8% 15%);
+  --sidebar-accent-foreground: hsl(0 0% 98%);
+  --sidebar-border: hsl(240 6% 20%);
+  --sidebar-ring: hsl(217.2 91.2% 65%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+
+  :not(.dark) ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+
+  :not(.dark) ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  :not(.dark) ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  /* Focus styles */
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+
+  /* Mobile touch improvements */
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  /* Form elements */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  /* InvenAI specific component styles */
+  .invenai-gradient-bg {
+    background: var(--gradient-primary);
+  }
+
+  .invenai-card {
+    @apply bg-card text-card-foreground rounded-lg shadow-sm border border-border p-6;
+  }
+
+  .invenai-button-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .invenai-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 font-medium px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .invenai-input {
+    @apply block w-full px-3 py-2 border border-input rounded-lg text-sm bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring;
+  }
+
+  /* Status badges */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-badge-success {
+    @apply bg-green-500/10 text-green-500 dark:bg-green-500/20 dark:text-green-400;
+  }
+
+  .status-badge-warning {
+    @apply bg-yellow-500/10 text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-400;
+  }
+
+  .status-badge-error {
+    @apply bg-red-500/10 text-red-600 dark:bg-red-500/20 dark:text-red-400;
+  }
+
+  .status-badge-info {
+    @apply bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400;
+  }
+
+  /* Loading states */
+  .loading-skeleton {
+    @apply animate-pulse bg-slate-200 rounded;
+  }
+
+  /* Responsive table styles */
+  .responsive-table {
+    @apply min-w-full divide-y divide-slate-200;
+  }
+
+  .responsive-table th {
+    @apply px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider;
+  }
+
+  .responsive-table td {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-slate-900;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 640px) {
+    .mobile-stack {
+      @apply flex-col space-y-2 space-x-0;
+    }
+
+    .mobile-full {
+      @apply w-full;
+    }
+
+    .mobile-text-sm {
+      @apply text-sm;
+    }
+
+    .mobile-p-4 {
+      @apply p-4;
+    }
+
+    /* Hide complex table columns on mobile */
+    .hide-mobile {
+      @apply hidden;
+    }
+
+    /* Stack form fields on mobile */
+    .form-grid {
+      @apply grid-cols-1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .form-grid {
+      @apply grid-cols-2;
+    }
+
+    .hide-mobile {
+      @apply table-cell;
+    }
+  }
+
+  /* Offline indicator */
+  .offline-indicator {
+    @apply fixed top-0 left-0 right-0 bg-yellow-100 border-b border-yellow-200 px-4 py-2 text-sm text-yellow-800 text-center z-50;
+  }
+
+  /* Animation utilities */
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(10px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    .print-full-width {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Ensure text is black for printing */
+    body, * {
+      color: black !important;
+    }
+
+    /* Remove backgrounds for printing */
+    .print-no-bg {
+      background: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .invenai-button-primary {
+      @apply border-2 border-black;
+    }
+
+    .invenai-card {
+      @apply border-2 border-black;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Layout utilities */
+  .container-invenai {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Spacing utilities */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+
+  /* Color utilities for InvenAI theme */
+  .text-primary-invenai {
+    color: var(--invenai-primary);
+  }
+
+  .text-secondary-invenai {
+    color: var(--invenai-secondary);
+  }
+
+  .text-warning-invenai {
+    color: var(--invenai-warning);
+  }
+
+  .text-danger-invenai {
+    color: var(--invenai-danger);
+  }
+
+  .bg-primary-invenai {
+    background-color: var(--invenai-primary);
+  }
+
+  .bg-secondary-invenai {
+    background-color: var(--invenai-secondary);
+  }
+
+  .bg-warning-invenai {
+    background-color: var(--invenai-warning);
+  }
+
+  .bg-danger-invenai {
+    background-color: var(--invenai-danger);
+  }
+
+  /* Border utilities */
+  .border-primary-invenai {
+    border-color: var(--invenai-primary);
+  }
+
+  /* Safe area utilities for mobile devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Accessibility utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
